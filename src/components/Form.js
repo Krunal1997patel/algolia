@@ -1,36 +1,28 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react';
+import AlgoliaPlaces from 'algolia-places-react';
+
+const Forms = () => {
+  return (
+    <AlgoliaPlaces
+      placeholder='Address'
+
+      options={{
+        appId: 'plC9IP7POGR4',
+        apiKey: '322b14756dfd2b0cac01b70ca4a336e6',
+        language: 'en_US',
+        countries: ['us'],
+        type: 'address',
+        // type: 'city',
+        // type: 'country',
+        // type: 'postcode'
+        // Other options from https://community.algolia.com/places/documentation.html#options
+      }}
+
+      placeholder='State'
 
 
-const Forms = () =>{
-
-    return(
-        <div>
-            <h1>Algoila Address Autocomplete Demo</h1>
-            <div>
-            <form className="form">
-                <div className="form-group">
-                    <label htmlFor="form-address">Address: </label>
-                    <input type="text" className="form-control" id="form-address" />
-                </div>
-
-                <div className="form-group">
-                    <label htmlFor="form-state" className='move'>State: </label>
-                    <input type="text" className="form-control" id="form-state" />
-                </div>
-
-                <div className="form-group">
-                    <label htmlFor="form-city" className='move'>City: </label>
-                    <input type="text" className="form-control" id="form-city" />
-                </div>
-
-                <div className="form-group">
-                    <label htmlFor="form-zip">ZIP code: </label>
-                    <input type="text" className="form-control" id="form-zip" />
-                </div>
-            </form>
-            </div>
-        </div>
-    )
+    />
+  );  
 }
 
 export default Forms;
